@@ -1,0 +1,20 @@
+# Ignore existing project directories and files
+/Memory/
+/Studycase/
+/Textbooks-20261105/
+/User Fault/
+/Week01/
+/Week02/
+/Week03/
+/result/
+
+/generate_roadmap_pdf.py
+/Roadmap_Phat_Trien_Software_Tester.docx
+/Roadmap_Phat_Trien_Software_Tester.pdf
+
+# Common caches & OS files
+.ruff_cache/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db

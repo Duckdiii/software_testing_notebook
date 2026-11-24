@@ -6,28 +6,24 @@
 ## Checklist kiến thức & kỹ năng
 
 ### Black-box testing
-- [ ] Equivalence Partitioning (EP)
-- [ ] Boundary Value Analysis (BVA)
-- [ ] Decision Table
-- [ ] State Transition
-- [ ] Use Case Testing
-- [ ] Pairwise
+- [ ] [Equivalence Partitioning (EP)](./01-equivalence-partitioning.md)
+- [ ] [Boundary Value Analysis (BVA)](./02-boundary-value-analysis.md)
+- [ ] [Decision Table](./03-decision-table-testing.md)
+- [ ] [State Transition](./04-state-transition-testing.md)
+- [ ] [Use Case Testing](./05-use-case-testing.md)
+- [ ] [Pairwise](./06-pairwise-testing.md)
 
 ### White-box testing *(lợi thế từ góc nhìn dev)*
-- [ ] Statement coverage
-- [ ] Branch coverage
-- [ ] Condition coverage
-- [ ] Path coverage
-- [ ] Cyclomatic Complexity
+- [ ] [Statement, Branch, Condition, Path coverage & MC/DC](./07-white-box-coverage.md)
+- [ ] [Cyclomatic Complexity & Basis Path Testing](./08-cyclomatic-complexity.md)
 
 ### Experience-based testing
-- [ ] Error guessing
-- [ ] Exploratory testing
+- [ ] [Error guessing & Exploratory testing](./09-experience-based-testing.md)
 
 ## Thực hành
 
-- [ ] Lấy từng form (đăng ký, checkout, voucher) trong project của bạn, thiết kế test bằng cả 4 kỹ thuật rồi so sánh số lượng test case và bug tìm được.
+- [ ] [Thực hành: Thiết kế test cho 3 form (Đăng ký, Checkout, Voucher) bằng 4 kỹ thuật & so sánh hiệu quả](./10-thuc-hanh-so-sanh-4-ky-thuat.md)
 
 ## Deliverable
 
-- [ ] Một bộ **test design document** có truy vết yêu cầu (**traceability matrix**).
+- [ ] [Deliverable: Test Design Document & Requirements Traceability Matrix (RTM)](./11-deliverable-test-design-doc-rtm.md)

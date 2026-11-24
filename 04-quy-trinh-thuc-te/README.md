@@ -5,13 +5,17 @@
 
 ## Checklist kiến thức & kỹ năng
 
-- [ ] **Agile testing:** testing quadrants (Q1–Q4), vai trò tester trong Scrum, Definition of Done (DoD), acceptance criteria, Three Amigos
-- [ ] **Exploratory testing:** session-based, charter, mind map
-- [ ] **Defect management:** vòng đời bug, triage, root cause analysis; dùng **Jira** thành thạo (workflow, JQL, dashboard)
-- [ ] **Test management:** test plan vs test strategy, risk-based testing, metrics (defect density, escape rate), công cụ như **TestRail** hoặc **Zephyr**
-- [ ] **Database testing:** SQL nâng cao (`JOIN`, aggregate), kiểm tra data integrity, transaction/rollback, migration testing
+- [ ] [**Agile testing:** testing quadrants (Q1–Q4), vai trò tester trong Scrum, Definition of Done (DoD), acceptance criteria, Three Amigos](./01-agile-testing-scrum-three-amigos.md)
+- [ ] [**Exploratory testing:** session-based (SBTM), charter, TBS, PROOF & mind map](./02-exploratory-testing-sbtm-mindmap.md)
+- [ ] [**Defect management:** vòng đời bug, triage, root cause analysis (5 Whys/Fishbone); dùng **Jira** thành thạo (workflow, JQL, dashboard)](./03-defect-management-jira-jql-rca.md)
+- [ ] [**Test management:** test plan vs test strategy, risk-based testing, metrics (defect density, escape rate, DRE), **TestRail** & **Zephyr Scale**](./04-test-management-plan-strategy-metrics.md)
+- [ ] [**Database testing:** SQL nâng cao (`JOIN`, aggregate, CTE), kiểm tra data integrity, transaction/rollback, migration testing (Flyway/Liquibase)](./05-database-testing-sql-integrity-migration.md)
+
+## Thực hành
+
+- [ ] [Thực hành: Three Amigos, SBTM Mind Map, Jira JQL/RCA & SQL Audit cho Project CRM](./06-thuc-hanh-agile-jira-sql-crm.md)
 
 ## Deliverable
 
-- [ ] Một **test plan + test strategy** cho project **CRM**
-- [ ] Một **exploratory session report**
+- [ ] [Deliverable 1: Test Strategy & Release Test Plan cho project **CRM**](./07-deliverable-crm-test-strategy-test-plan.md)
+- [ ] [Deliverable 2: Exploratory Session Report (`SBTM-CRM-2026-01`)](./08-deliverable-crm-exploratory-session-report.md)

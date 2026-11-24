@@ -5,13 +5,17 @@
 
 ## Checklist kiến thức & kỹ năng
 
-- [ ] **Performance:** JMeter hoặc k6; phân biệt load, stress, spike, soak test; đọc kết quả `p95`/`p99`, throughput, error rate
-- [ ] **Security testing:** học thêm OWASP Top 10 theo góc nhìn tester, tích hợp DAST (OWASP ZAP) vào pipeline
-- [ ] **Accessibility & usability:** WCAG cơ bản, axe, Lighthouse
-- [ ] **CI/CD:** GitHub Actions hoặc Jenkins chạy test tự động mỗi PR; dùng Docker cho môi trường test, quản lý flaky test, test report, quality gate
+- [ ] [**Performance:** JMeter hoặc k6; phân biệt load, stress, spike, soak test; đọc kết quả `p95`/`p99`, throughput, error rate](./01-performance-testing-jmeter-k6.md)
+- [ ] [**Security testing:** OWASP Top 10 (2021 & 2025) theo góc nhìn tester, Burp Suite & tích hợp DAST (OWASP ZAP) vào pipeline](./02-security-testing-owasp-burp-zap.md)
+- [ ] [**Accessibility & usability:** WCAG 2.2 (POUR), `axe-core`, Lighthouse CI & kiểm tra bàn phím](./03-accessibility-wcag-axe-lighthouse.md)
+- [ ] [**CI/CD:** GitHub Actions & Jenkins chạy test tự động mỗi PR; Docker Compose cho môi trường test, quản lý flaky test, test report, quality gate](./04-cicd-github-actions-docker-flaky-gates.md)
+
+## Thực hành
+
+- [ ] [Thực hành: k6 Load/Spike, Burp Suite + OWASP ZAP Docker, Lighthouse/axe & Docker Compose cho TechStore](./05-thuc-hanh-k6-zap-lighthouse-cicd-techstore.md)
 
 ## Deliverable
 
-- [ ] Pipeline CI chạy `unit + API + UI test + báo cáo`
-- [ ] Một **báo cáo performance**
-- [ ] Một **báo cáo security**
+- [ ] [Deliverable 1: Pipeline CI chạy `unit + API + UI + non-functional + Allure Report`](./06-deliverable-ci-pipeline-techstore.md)
+- [ ] [Deliverable 2: Báo cáo Kiểm thử Hiệu năng (`PERF-TECHSTORE-2026-01`)](./07-deliverable-performance-test-report.md)
+- [ ] [Deliverable 3: Báo cáo Kiểm thử Bảo mật (`SEC-TECHSTORE-2026-01`)](./08-deliverable-security-test-report.md)

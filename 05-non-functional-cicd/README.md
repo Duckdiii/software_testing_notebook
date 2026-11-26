@@ -10,6 +10,11 @@
 - [ ] [**Accessibility & usability:** WCAG 2.2 (POUR), `axe-core`, Lighthouse CI & kiểm tra bàn phím](./03-accessibility-wcag-axe-lighthouse.md)
 - [ ] [**CI/CD:** GitHub Actions & Jenkins chạy test tự động mỗi PR; Docker Compose cho môi trường test, quản lý flaky test, test report, quality gate](./04-cicd-github-actions-docker-flaky-gates.md)
 
+### Concepts bổ sung (`./concepts/`)
+- [Tổng mục lục Giai đoạn 5](./concepts/README.md)
+- [ ] [Mô hình chất lượng ISO/IEC 25010 (Đủ 8 đặc tính & cập nhật 2023)](./concepts/01-iso-25010-quality-characteristics.md)
+- [ ] [Operational Acceptance Testing (OAT): Backup/Restore (RPO), DR (RTO), Rollback & Alerting](./concepts/02-operational-acceptance-testing-oat.md)
+
 ## Thực hành
 
 - [ ] [Thực hành: k6 Load/Spike, Burp Suite + OWASP ZAP Docker, Lighthouse/axe & Docker Compose cho TechStore](./05-thuc-hanh-k6-zap-lighthouse-cicd-techstore.md)

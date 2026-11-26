@@ -13,6 +13,10 @@
 - [ ] [**TDD:** thực hành `red → green → refactor`](./06-tdd-red-green-refactor.md)
 - [ ] [**Test pyramid:** tổng hợp chương 14 *Agile Testing* và *"Automated Functional Testing Strategy"* trong *Full Stack Testing*](./07-test-pyramid-automation-strategy.md)
 
+### Concepts bổ sung (`./concepts/`)
+- [Tổng mục lục & Nhật ký lọc trùng lặp](./concepts/README.md)
+- [ ] [Nguyên lý Unit & Integration Testing & 3 chiến lược (Big Bang, Top-Down Stub, Bottom-Up Driver)](./concepts/01-unit-and-integration-fundamentals.md)
+
 ## Thực hành
 
 - [ ] [Thực hành: TDD `VoucherRuleEngine`, Unit Test `CheckoutService`, Slice & Testcontainers Concurrency Test cho TechStore](./08-thuc-hanh-tdd-unit-integration-techstore.md)

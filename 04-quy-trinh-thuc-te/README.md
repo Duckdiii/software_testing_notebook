@@ -11,6 +11,11 @@
 - [ ] [**Test management:** test plan vs test strategy, risk-based testing, metrics (defect density, escape rate, DRE), **TestRail** & **Zephyr Scale**](./04-test-management-plan-strategy-metrics.md)
 - [ ] [**Database testing:** SQL nâng cao (`JOIN`, aggregate, CTE), kiểm tra data integrity, transaction/rollback, migration testing (Flyway/Liquibase)](./05-database-testing-sql-integrity-migration.md)
 
+### Concepts bổ sung (`./concepts/`)
+- [Tổng mục lục & Nhật ký lọc trùng lặp](./concepts/README.md)
+- [ ] [User Acceptance Testing (UAT): Vai trò, Staging, Real Data & 2 cạm bẫy nghiệm thu](./concepts/01-user-acceptance-testing-uat.md)
+- [ ] [Alpha Testing & Beta Testing: Thực địa, Closed vs Open Beta & Curse of Knowledge](./concepts/02-alpha-and-beta-testing.md)
+
 ## Thực hành
 
 - [ ] [Thực hành: Three Amigos, SBTM Mind Map, Jira JQL/RCA & SQL Audit cho Project CRM](./06-thuc-hanh-agile-jira-sql-crm.md)

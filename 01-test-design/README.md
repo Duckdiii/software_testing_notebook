@@ -20,6 +20,10 @@
 ### Experience-based testing
 - [ ] [Error guessing & Exploratory testing](./09-experience-based-testing.md)
 
+### Concepts bổ sung (`./concepts/`)
+- [Tổng mục lục & Nhật ký lọc trùng lặp](./concepts/README.md)
+- [ ] [Làm rõ điểm dễ nhầm (2-Value vs 3-Value BVA, công thức, White-box)](./concepts/01-school-notes-clarifications.md)
+
 ## Thực hành
 
 - [ ] [Thực hành: Thiết kế test cho 3 form (Đăng ký, Checkout, Voucher) bằng 4 kỹ thuật & so sánh hiệu quả](./10-thuc-hanh-so-sanh-4-ky-thuat.md)

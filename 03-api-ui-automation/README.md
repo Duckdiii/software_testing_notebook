@@ -17,6 +17,9 @@
 - [ ] [**Playwright (Java hoặc TypeScript):** hiện đại hơn, ít flaky hơn, đang được tuyển nhiều *(học thêm sau Selenium)*](./07-playwright-modern-ui-automation.md)
 - [ ] [**BDD với Cucumber:** hiểu bản chất Living Documentation & tránh anti-patterns](./08-bdd-cucumber-overview.md)
 
+### Concepts bổ sung (`./concepts/`)
+- [Ghi chú lọc trùng lặp & Liên kết Manual vs Automation / Full-Stack 4 tầng](./concepts/README.md)
+
 ## Thực hành
 
 - [ ] [Thực hành: Xây dựng bộ Automation API (Postman, REST Assured) + UI (Selenium POM, Playwright Hybrid) cho TechStore](./09-thuc-hanh-api-ui-automation-techstore.md)

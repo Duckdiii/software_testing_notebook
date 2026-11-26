@@ -15,6 +15,9 @@
 - [ ] [Định vị CV **"Software Engineer với nền tảng QA/Automation"** & tùy biến cho 4 vị trí (`QA/QC`, `Automation`, `SDET`, `Security QA`)](./03-cv-positioning-role-targeting.md)
 - [ ] [Ngân hàng 26 Câu hỏi Phỏng vấn thực chiến (Test Design, Java/Mockito/Testcontainers, Selenium/Playwright, API/DB, Agile, Perf/Security)](./04-interview-qa-masterbank.md)
 
+### Concepts bổ sung (`./concepts/`)
+- [Cheat-Sheet 7 Cặp Khái niệm Dễ Bị Hỏi Bẫy Từ Note Trường (Ôn ISTQB & Phỏng vấn)](./concepts/README.md)
+
 ## Thực hành
 
 - [ ] [Thực hành 3 tuần nước rút: Audit Portfolio 15 điểm, giải đề ISTQB & 3 bài Mock Interview 45 phút](./05-thuc-hanh-mock-interview-va-audit-portfolio.md)

@@ -8,16 +8,9 @@
 
 ## 1. Chu trình Red → Green → Refactor & 3 Định luật TDD
 
-```mermaid
-flowchart LR
-    RED["1. RED<br/>Viết 1 test nhỏ cho hành vi mới<br/>Chạy và thấy FAIL rõ ràng"]
-    GREEN["2. GREEN<br/>Viết code tối giản NHẤT<br/>để test PASS (cho phép thô sơ)"]
-    REFACTOR["3. REFACTOR<br/>Dọn sạch code & cả test code<br/>(giữ toàn bộ test luôn XANH!)"]
+![Chu trình Test-Driven Development: Red → Green → Refactor](./images/tdd-red-green-refactor.png)
 
-    RED -->|"Code tối thiểu"| GREEN
-    GREEN -->|"Làm sạch thiết kế"| REFACTOR
-    REFACTOR -->|"Yêu cầu/Edge case tiếp theo"| RED
-```
+*Hình: Vòng lặp `Test Fails (Red) → Write minimal implementation code → Test Passes (Green) → Refactor implementation and test code` (Nguồn ảnh: Codecademy).*
 
 ### Ba Định luật Vàng của TDD (Uncle Bob — Robert C. Martin)
 1. **Định luật 1:** Bạn **không được phép** viết bất kỳ dòng production code nào cho tới khi bạn có một unit test đang bị FAIL.

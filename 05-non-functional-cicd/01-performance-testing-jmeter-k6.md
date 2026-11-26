@@ -8,21 +8,9 @@ Theo số liệu từ Google được trích trong *Full Stack Testing* (Bảng 
 
 ## 1. Phân biệt 4 Loại hình Performance Testing (Traffic Profiles)
 
-```mermaid
-flowchart LR
-    subgraph LOAD["1. Load Test (Tải bình thường / Peak kỳ vọng)"]
-        L1["0 VU"] -->|"Ramp-up"| L2["200 VUs (giữ ổn định 20 phút)"] -->|"Ramp-down"| L3["0 VU"]
-    end
-    subgraph STRESS["2. Stress Test (Tìm ngưỡng sập)"]
-        S1["100 VUs"] -->|"Tăng bậc thang liên tục"| S2["300 -> 500 -> 800 VUs (tới khi Error tăng vọt!)"]
-    end
-    subgraph SPIKE["3. Spike Test (Sốc tải đột ngột — Flash Sale)"]
-        P1["50 VUs"] -->|"Bùng nổ tức thì trong 10s!"| P2["500 VUs (5 phút)"] -->|"Giảm đột ngột"| P3["50 VUs (xem khả năng hồi phục!)"]
-    end
-    subgraph SOAK["4. Soak / Endurance Test (Ngâm tải dài hạn)"]
-        K1["150 VUs (chạy liên tục 4–24 giờ để săn Memory Leak / Connection Leak)"]
-    end
-```
+![Biểu đồ các loại hình Load Test theo VUs/Throughput và Thời gian (Grafana k6)](./images/performance-test-types.png)
+
+*Hình: So sánh trực quan hồ sơ tải của `Smoke`, `Average Load`, `Stress`, `Soak`, `Breakpoint` và `Spike` testing theo trục VUs/Thời gian (Nguồn ảnh: Grafana k6 Official Documentation).*
 
 | Loại Test | Câu hỏi cần trả lời | Hình dạng tải (*Traffic Shape*) | Lỗi đặc trưng phát hiện được |
 | :--- | :--- | :--- | :--- |

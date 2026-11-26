@@ -13,32 +13,13 @@
 3. **Nhánh phải đi lên (Integration & Execution Testing):** Tích hợp và kiểm thử động từ từng hàm/class nhỏ lên toàn hệ thống hoàn chỉnh.
 4. **Mũi tên ngang đối xứng (`<--->`):** **Nguyên lý quan trọng nhất** — mỗi giai đoạn bên nhánh trái vừa hoàn tất thì **kế hoạch và kịch bản test cho cấp độ tương ứng bên nhánh phải đã phải được thiết kế ngay lập tức**, không đợi tới khi có code chạy.
 
-```mermaid
-flowchart TB
-    subgraph Left["Nhánh trái - Decomposition & Static Verification"]
-        L4["Tầng 4: Requirements Analysis (SRS / User Needs)"]
-        L3["Tầng 3: System Architecture (High-Level Design)"]
-        L2["Tầng 2: Module Design (Low-Level Design)"]
-        L4 --> L3 --> L2
-    end
+![Mô hình chữ V kết hợp ranh giới Verification / Validation và Shift-Left](../images/shift-left-model.jpg)
 
-    Bottom["Đáy chữ V: Coding + Linters + Code Review"]
-    L2 --> Bottom
+*Hình: Mô hình chữ V mở rộng thể hiện đường ranh giới ngang **Verification (dưới) vs. Validation (trên)**, kết nối các cấp độ từ `Unit Tests → Integration Tests → System Tests → Acceptance Tests → Operational Tests` cùng tư duy Shift-Left sớm ngay từ nhánh trái (Nguồn: [Wikimedia Commons (Model-Shift-Left)](https://commons.wikimedia.org/wiki/File:Model-Shift-Left.jpg)).*
 
-    subgraph Right["Nhánh phải - Dynamic Testing & Integration"]
-        R1["Unit Testing (Verification)"]
-        R2["Integration Testing (Verification)"]
-        R3["System Testing (Giao thoa V&V)"]
-        R4["Acceptance Testing / UAT (Validation thuần túy)"]
-        R1 --> R2 --> R3 --> R4
-    end
+![Mô hình chữ V chuẩn đối xứng giữa Phân tích/Thiết kế và Kiểm thử](../images/v-model-vv.png)
 
-    Bottom --> R1
-    L4 -.->|"Thiết kế UAT sớm & Validation"| R4
-    L3 -.->|"Thiết kế System Test sớm & V&V"| R3
-    L2 -.->|"Thiết kế Integration Test sớm & Verify Interface"| R2
-    Bottom -.->|"Verify Algorithm / Spec"| R1
-```
+*Hình: Sơ đồ rút gọn nhấn mạnh 3 cặp đối xứng `Requirements ↔ System Testing`, `High-Level Design ↔ Integration Testing`, `Detailed Design ↔ Unit Testing` quanh đỉnh `Implementation` (Nguồn: Wikimedia Commons).*
 
 ---
 

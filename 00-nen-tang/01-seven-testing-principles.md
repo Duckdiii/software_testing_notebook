@@ -4,12 +4,9 @@
 
 7 nguyên lý kiểm thử cơ bản của ISTQB là kim chỉ nam áp dụng cho **mọi loại kiểm thử, mọi cấp độ kiểm thử và mọi mô hình phát triển phần mềm** (Waterfall, Agile, DevOps). Trước khi đi sâu vào từng nguyên lý, cần nắm chuỗi nhân quả cốt lõi:
 
-```mermaid
-flowchart LR
-    E["Error / Mistake (Sai sót con người)"] -->|"Tạo ra"| D["Defect / Bug / Fault (Khuyết tật trong code/tài liệu)"]
-    D -->|"Khi được thực thi"| F["Failure (Sự cố quan sát được lúc chạy)"]
-    RC["Root Cause (Nguyên nhân gốc rễ, vd: thiếu review)"] -. "Điều kiện phát sinh" .-> E
-```
+![Chuỗi nhân quả Error, Defect và Failure](./images/error-defect-failure.webp)
+
+*Hình: Chuỗi nhân quả cốt lõi — `Error / Mistake` (con người) → `Defect / Fault / Bug` (trong code/tài liệu) → `Failure` (sự cố khi thực thi). Nguồn ảnh: GeeksforGeeks.*
 
 ---
 

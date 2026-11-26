@@ -21,6 +21,10 @@ Một câu hỏi phỏng vấn Java Backend / SDET kinh điển: *"Tại sao kh�
 
 ## 2. Kiến trúc Testcontainers & Cơ chế dọn dẹp (`Ryuk`)
 
+![Kiến trúc Testcontainers tích hợp service với Database, Message Broker và dịch vụ phụ thuộc trong Docker](./images/testcontainers-arch.png)
+
+*Hình: Testcontainers khởi tạo các dependency thật (PostgreSQL, Kafka, Cloud/S3 mock, microservices) ngay trong container Docker cô lập thay vì dùng DB giả lập (Nguồn ảnh: Testcontainers Official).*
+
 ```mermaid
 sequenceDiagram
     participant JUnit as JUnit 5 / Spring Boot Test

@@ -4,6 +4,10 @@
 
 Đây là mảng **lợi thế lớn của người có nền tảng lập trình (Dev/SDET)**: thay vì chỉ nhìn giao diện/đặc tả (Black-box), **White-box Testing (Structure-based Testing)** đọc trực tiếp **mã nguồn, luồng điều khiển (Control Flow) và luồng dữ liệu** để đo lường xem bộ test đã thực thi được bao nhiêu phần trăm cấu trúc code.
 
+![So sánh White-box Testing (hộp mở nhìn cấu trúc bên trong) và Black-box Testing (hộp đóng)](./images/white-box-vs-black-box.png)
+
+*Hình: Trực quan hóa sự khác biệt giữa White-Box Testing ("Open-box" kiểm tra logic/cấu trúc bên trong) và Black-Box Testing ("Closed-box" kiểm tra đầu vào/ra theo đặc tả). Nguồn: Wikimedia Commons.*
+
 ---
 
 ## 1. Control Flow Graph (CFG — Đồ thị luồng điều khiển)
@@ -12,23 +16,22 @@ Mọi kỹ thuật coverage đều bắt đầu bằng việc chuyển code thà
 - **Node (Đỉnh):** Một khối lệnh tuần tự (*basic block*) hoặc một điểm kiểm tra điều kiện (*decision node*).
 - **Edge (Cạnh có hướng):** Mũi tên thể hiện luồng chuyển quyền điều khiển giữa các node (nhánh `True`, nhánh `False`, vòng lặp quay lại, thoát hàm).
 
+![Luồng thực thi White-box Testing qua các cấp độ Unit, Integration và System](./images/white-box-testing.webp)
+
+*Hình: Từ Test Case Input đi xuyên qua cấu trúc Application Code bên trong để kiểm chứng Test Case Output (Nguồn ảnh: GeeksforGeeks).*
+
 ---
 
 ## 2. Hệ thống phân cấp 5 mức độ Coverage (Từ yếu đến mạnh)
 
-```mermaid
-flowchart BT
-    SC["1. Statement Coverage (Bao phủ câu lệnh - Yếu nhất)"]
-    BC["2. Branch / Decision Coverage (Bao phủ nhánh)"]
-    CC["3. Condition Coverage (Bao phủ điều kiện con)"]
-    CDC["4. Condition/Decision & MC/DC (Điều kiện độc lập)"]
-    PC["5. Path Coverage (Bao phủ toàn bộ đường đi - Mạnh nhất)"]
+![Các loại hình Code Coverage phổ biến trong White-box Testing](./images/code-coverage-types.webp)
 
-    SC -->|"100% Branch ⇒ 100% Statement"| BC
-    BC -->|"Kết hợp với Condition"| CDC
-    CC -. "100% Condition KHÔNG suy ra 100% Branch!" .-> BC
-    CDC -->|"Bao phủ mạnh hơn nhưng vẫn thực tế hơn Path"| PC
-```
+*Hình: Các nhóm đo lường độ bao phủ phổ biến (`Statement/Line`, `Branch/Decision`, `Condition/Predicate`, `Function`, `Loop`, `Path`). Nguồn ảnh: GeeksforGeeks.*
+
+- **Quan hệ bao hàm chuẩn ISTQB:**
+  - `100% Branch/Decision Coverage` **⇒ luôn đạt** `100% Statement Coverage` *(nhưng chiều ngược lại KHÔNG đúng)*.
+  - `100% Condition Coverage` **KHÔNG đảm bảo** đạt `100% Branch Coverage` *(nếu chưa ép cả biểu thức tổng đạt đủ True và False)*.
+  - `Condition/Decision`, `MC/DC` và `Path Coverage` đạt độ bao phủ chặt chẽ hơn theo thứ tự tăng dần.
 
 Hãy dùng **cùng một hàm Java thực tế của TechStore** dưới đây để so sánh trực quan cả 5 kỹ thuật:
 

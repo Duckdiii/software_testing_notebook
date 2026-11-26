@@ -160,14 +160,15 @@ void fakeCoverageTest() {
 Như giáo trình *Full Stack Testing* (Chương 2, trang 82) đã nhấn mạnh: để biết bộ Unit Test có thực sự "biết cắn" khi code bị lỗi hay không, ta dùng **Mutation Testing** (kiểm thử đột biến) với công cụ **PITest (PIT)**.
 
 ### Cơ chế hoạt động của PITest ("Who tests the tests?")
-```mermaid
-flowchart LR
-    CODE["Bytecode Production gốc"] --> MUT["PITest tự động tạo hàng loạt Mutants<br/>(VD: đổi >= thành >, + thành -, xóa lời gọi void)"]
-    MUT --> RUN["Chạy lại bộ Unit Test trên từng Mutant"]
-    RUN -->|"Ít nhất 1 test FAIL"| KILLED["KILLED (Tốt! Test đã bắt được lỗi giả lập)"]
-    RUN -->|"Tất cả test vẫn PASS!"| SURV["SURVIVED (Nguy hiểm! Test quá yếu hoặc thiếu ca biên!)"]
-    RUN -->|"Không có test nào chạm tới dòng đó"| NOCOV["NO COVERAGE"]
-```
+### Cơ chế hoạt động của PITest ("Who tests the tests?")
+
+![Nguyên lý Mutation Testing: chạy cùng bộ test trên mã nguồn gốc và các bản đột biến (Mutant)](./images/mutation-testing.webp)
+
+*Hình: Nguyên lý Mutation Testing — tạo Mutant Program từ thay đổi nhỏ trong bytecode gốc, chạy lại bộ Unit Test để đối chiếu kết quả (`KILLED`, `SURVIVED`, `NO COVERAGE`). Nguồn ảnh: GeeksforGeeks.*
+
+- **KILLED *(Tốt)*:** Ít nhất `1` test FAIL khi gặp đột biến → bộ test đủ nhạy để bắt lỗi.
+- **SURVIVED *(Nguy hiểm)*:** Tất cả test vẫn PASS dù code đã bị sửa sai → test quá yếu hoặc thiếu giá trị biên!
+- **NO COVERAGE:** Chưa có test nào chạy qua dòng code đó.
 
 $$\text{Mutation Score} = \left( \frac{\text{Số Mutant bị Killed}}{\text{Tổng số Mutant (trừ Equivalent)}} \right) \times 100\%$$
 

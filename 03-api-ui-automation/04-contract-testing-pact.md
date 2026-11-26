@@ -20,25 +20,9 @@ Hãy quay lại ví dụ thực tế trong *Full Stack Testing* (Chương 2, tra
 
 **Pact** giải quyết bài toán bằng cách tách việc kiểm tra tích hợp thành **2 bước độc lập, chạy siêu nhanh trong CI của từng service**:
 
-```mermaid
-sequenceDiagram
-    participant C as Consumer (OrderService Team)
-    participant Mock as Pact MockServer (Local)
-    participant Broker as Pact Broker / PactFlow
-    participant P as Provider (PIMService Team)
+![Quy trình Consumer-Driven Contract Testing với Pact (5 bước)](./images/pact-contract-testing.png)
 
-    Note over C,Mock: Bước 1: Tại repo của Consumer (OrderService)
-    C->>Mock: Khai báo kỳ vọng (Request GET /items -> cần sku, color, size)
-    C->>Mock: Chạy Consumer Test gọi thật RestTemplate vào Pact MockServer
-    Mock-->>C: Trả stub JSON & TỰ SINH file contract (.json)
-    C->>Broker: Publish Pact Contract file lên Pact Broker
-
-    Note over Broker,P: Bước 2: Tại repo của Provider (PIMService)
-    Broker->>P: Kéo về tất cả Pact Contracts từ mọi Consumer
-    P->>P: Dựng dữ liệu giả lập theo @State("items are available")
-    P->>P: Pact tự động bắn các request trong Pact file vào PIMService THẬT!
-    P-->>Broker: Báo kết quả Verification (Pass/Fail) -> cảnh báo ngay trước khi merge PR!
-```
+*Hình: Kiến trúc Pact 5 bước — Consumer test chạy nhanh với Mock Provider để sinh file Pact Contract → đẩy lên Pact Broker → Provider CI tải Contract về phát lại (*replay*) vào Provider thật để phát hiện sai lệch Schema tức thì (Nguồn: `docs.pact.io`).*
 
 ### Đặc điểm "Consumer-Driven" cực kỳ thông minh
 - `OrderService` chỉ assert đúng **3 trường nó cần dùng** (`SKU`, `Color`, `Size`). Nếu `PIMService` thêm trường mới `manufacturerAddress` hoặc sửa trường khác mà `OrderService` không đụng tới → **Contract Test vẫn PASS!**

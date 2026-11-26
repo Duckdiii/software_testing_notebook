@@ -8,6 +8,10 @@ Theo Chương 3 *Full Stack Testing*, **Continuous Integration (CI)** dừng l�
 
 ## 1. Chiến lược Phân tầng Pipeline (Fast Feedback vs. Nightly Regression)
 
+![Mô hình Deployment Pipeline chuẩn: Build → Test → Provision Infrastructure → Deploy → Test More](./images/ci-deployment-pipeline-fowler.png)
+
+*Hình: Nguyên lý Deployment Pipeline nhiều chặng — kiểm thử nhanh trước khi cấp hạ tầng, deploy lên staging và tiếp tục chạy kiểm thử chuyên sâu (Nguồn ảnh: Martin Fowler / Ham Vocke).*
+
 Không thể nhét toàn bộ 2 tiếng UI E2E + Soak Test + Active Security Scan vào mọi Pull Request vì sẽ làm tắc nghẽn toàn bộ team Dev! Ta chia thành **2 vòng phản hồi (Feedback Loops)** như *Full Stack Testing* (tr. 104–106) mô tả:
 
 ```mermaid

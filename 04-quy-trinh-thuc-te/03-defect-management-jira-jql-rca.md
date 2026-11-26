@@ -21,6 +21,12 @@ Lisa Crispin & Janet Gregory đưa ra góc nhìn cực kỳ thực tế giúp tr
 
 ## 2. Vòng đời Defect chuẩn trên Jira Workflow
 
+![Quy trình Quản lý Khuyết tật chuẩn 8 bước (Defect Management Process)](./images/defect-management-process.webp)
+
+*Hình: Quy trình quản lý lỗi tổng quát từ phát hiện, ghi nhận, Triage, phân công, sửa lỗi, xác nhận lại, đóng lỗi và báo cáo (Nguồn ảnh: GeeksforGeeks).*
+
+Ánh xạ vào cấu hình trạng thái tùy biến trên bảng Jira của dự án TechStore / CRM:
+
 ```mermaid
 stateDiagram-v2
     [*] --> Open: QA log bug kèm Evidence & Severity

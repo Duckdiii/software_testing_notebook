@@ -23,13 +23,11 @@ Không qua nổi bài kiểm tra của kỹ sư mặt đất thì **tuyệt đ�
 
 ## 2. Bốn trụ cột cốt lõi của OAT trong thực tế
 
-```mermaid
-flowchart TD
-    OAT["Operational Acceptance Testing (OAT)"] --> P1["1. Backup & Restore (Kèm đo RPO)"]
-    OAT --> P2["2. Disaster Recovery & Failover (Kèm đo RTO)"]
-    OAT --> P3["3. Maintainability, Zero-Downtime & Rollback"]
-    OAT --> P4["4. Actual Performance, Auto-scaling & Alerting"]
-```
+Gồm 4 nhóm kiểm chứng chính: **Backup & Restore (RPO)**, **Disaster Recovery & Failover (RTO)**, **Maintainability & Rollback**, và **Auto-scaling & Alerting**:
+
+![Biểu đồ minh họa RPO (Recovery Point Objective) và RTO (Recovery Time Objective) trên trục thời gian sự cố](../images/rpo-rto-timeline.png)
+
+*Hình: RPO đo khoảng thời gian tối đa chấp nhận mất dữ liệu tính ngược từ lúc sự cố; RTO đo tổng thời gian khôi phục tính xuôi tới khi hệ thống vận hành lại bình thường (Nguồn: Wikimedia Commons).*
 
 ### Trụ cột 1: Sao lưu & Khôi phục dữ liệu (*Backup & Restore*)
 Nhiều hệ thống tự tin chạy script backup hàng đêm, nhưng tới lúc DB bị xóa/mã hóa mới phát hiện **file backup bị lỗi không giải nén được**.

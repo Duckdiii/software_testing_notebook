@@ -42,6 +42,10 @@ Tại **mỗi điểm ranh giới**, chọn **3 giá trị**:
 - Cụm biên trên (`24`): `{23, 24, 25}`
 - **Tổng tập test 3-value BVA:** `{0, 1, 2, 23, 24, 25}` (6 giá trị).
 
+![Minh họa kỹ thuật 3-value Boundary Value Analysis trên miền 1 đến 100](./images/boundary-value-analysis.webp)
+
+*Hình: Trực quan hóa kỹ thuật BVA chọn các điểm ngay sát biên (`0, 1, 2` và `99, 100, 101` cho miền hợp lệ `1..100`). Nguồn ảnh: GeeksforGeeks.*
+
 > **Tại sao 3-Value BVA cần thêm `2` và `23`?**  
 > Giả sử đặc tả ghi `credits >= 1`, nhưng lập trình viên lại viết nhầm `credits >= 2` (lỗi dịch biên!). Nếu không test `1`? (À test `1` vẫn bắt được lỗi đó). Nhưng nếu dev viết `credits == 1 || credits > 2` (bỏ sót đúng số `2`), hoặc ở logic liên quan 2 điều kiện rời rạc, chỉ 3-value BVA mới phát hiện lỗi ngay sát bên trong biên. Ngoài ra, 3-value BVA rất phổ biến trong hệ thống tài chính, y tế, hàng không và đề thi ISTQB CTFL v4.0!
 

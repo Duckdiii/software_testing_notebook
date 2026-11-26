@@ -43,10 +43,13 @@ def test_is_valid_credits():
 
 Khi ghép nối theo chiều dọc kiến trúc (`[Module A: Controller] → [Module B: Business Logic] → [Module C: Database]`), kỹ sư phần mềm có 3 cách tiếp cận chính:
 
-```mermaid
-flowchart TD
-    A["Module A (Tầng cao: UI / Controller)"] --> B["Module B (Tầng giữa: Business Logic)"] --> C["Module C (Tầng thấp: Database / Utilities)"]
-```
+![So sánh tích hợp Top-Down và Bottom-Up trên cây module](../images/integration-top-down-bottom-up.png)
+
+*Hình: Chiều tích hợp Top-Down (từ module đỉnh xuống dưới) đối lập với Bottom-Up (từ module lá đi lên đỉnh). Nguồn ảnh: GeeksforGeeks.*
+
+![So sánh Stubs (dùng cho Top-Down) và Drivers (dùng cho Bottom-Up)](../images/stubs-vs-drivers.webp)
+
+*Hình: Phân biệt vai trò `Stub` (giả lập hàm/module cấp dưới chưa xong) và `Driver` (hàm mồi cấp trên gọi thử module cấp dưới). Nguồn ảnh: GeeksforGeeks.*
 
 | Chiến lược | Cách thực hiện | Công cụ giả lập đi kèm | Ưu & Nhược điểm thực tế |
 | :--- | :--- | :--- | :--- |

@@ -16,19 +16,11 @@ Còn `System Testing.pdf` (trang 3) nhắc thêm nhóm thứ 5 là **Tính tươ
 
 ---
 
-## 2. 8 Đặc tính Chất lượng Sản phẩm Phần mềm (`ISO/IEC 25010:2011`)
+## 2. 8 Đặc tính Chất lượng Sản phẩm Phần mềm (`ISO/IEC 25010:2011`) & Bản cập nhật `2023`
 
-```mermaid
-flowchart TD
-    Q["ISO/IEC 25010 Product Quality (8 đặc tính)"] --> Q1["1. Functional Suitability (Phù hợp chức năng)"]
-    Q --> Q2["2. Performance Efficiency (Hiệu năng)"]
-    Q --> Q3["3. Compatibility (Tương thích)"]
-    Q --> Q4["4. Usability (Khả dụng / Tiếp cận)"]
-    Q --> Q5["5. Reliability (Tin cậy & Phục hồi)"]
-    Q --> Q6["6. Security (Bảo mật)"]
-    Q --> Q7["7. Maintainability (Dễ bảo trì)"]
-    Q --> Q8["8. Portability (Dễ chuyển đổi / Triển khai)"]
-```
+![Mô hình Chất lượng Sản phẩm Phần mềm chuẩn ISO/IEC 25010](../images/iso-25010-model.png)
+
+*Hình: Sơ đồ 9 nhóm đặc tính chất lượng theo **ISO/IEC 25010:2023** (`iso25000.com`) — đối chiếu chi tiết sự tương ứng với **8 đặc tính phiên bản 2011** trong bảng và Mục 3 bên dưới.*
 
 | # | Đặc tính | Câu hỏi kiểm chứng thực tế | Ánh xạ trong Repo Giai đoạn 5 & Bài học |
 | :-: | :--- | :--- | :--- |

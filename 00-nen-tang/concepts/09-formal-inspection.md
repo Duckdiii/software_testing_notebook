@@ -64,15 +64,9 @@ flowchart TD
 
 ## 4. Quy trình 6 giai đoạn chuẩn của Fagan Inspection
 
-```mermaid
-flowchart LR
-    P1["1. Planning (Entry Criteria, phân vai)"] --> P2["2. Overview (Tùy chọn 15–30')"]
-    P2 --> P3["3. Individual Preparation (Soi độc lập + tính giờ)"]
-    P3 --> P4["4. Inspection Meeting (Reader + Inspectors + Recorder)"]
-    P4 -->|"Accept / Conditional Accept"| P5["5. Rework (Author sửa theo Defect Log)"]
-    P4 -->|"Re-inspect (Lỗi quá nặng)"| P3
-    P5 --> P6["6. Follow-up (Moderator xác nhận Exit Criteria)"]
-```
+![Quy trình 6 giai đoạn Fagan Inspection theo chuẩn IEEE 1028](../images/fagan-inspection-flow.png)
+
+*Hình: Chu trình 6 pha chuẩn của Fagan Inspection (`Planning → Overview → Preparation → Meeting → Rework → Follow-up`) kèm vòng lặp kiểm tra lại khi số lượng/mức độ lỗi vượt ngưỡng Exit Criteria (Nguồn: Wikimedia Commons).*
 
 1. **Planning:** Moderator kiểm tra *Entry Criteria*, phân công vai trò và đặt lịch.
 2. **Overview *(tùy chọn)*:** Tác giả trình bày bối cảnh tổng quan `15–30` phút nếu tài liệu phức tạp.

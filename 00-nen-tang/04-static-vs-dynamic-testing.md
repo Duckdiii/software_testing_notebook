@@ -18,27 +18,19 @@ Static Testing và Dynamic Testing là **hai nửa bổ trợ cho nhau** chứ k
 | **Đo thuộc tính phi chức năng** | Hạn chế (chỉ đo được các chỉ số tĩnh như *Cyclomatic Complexity*, chuẩn coding). | Đo được trực tiếp lúc chạy: thời gian phản hồi (`p95`/`p99`), throughput, memory leak, concurrency, UX. |
 | **Công cụ / Kỹ thuật** | Manual Reviews (Informal, Walkthrough, Technical Review, Inspection) & Static Analysis (Ruff, ESLint, SpotBugs, SonarQube). | Black-box, White-box, Experience-based; JUnit, REST Assured, Selenium, Playwright, JMeter. |
 
+![So sánh Static Testing và Dynamic Testing](./images/static-vs-dynamic-testing.jpg)
+
+*Hình: Static Testing kiểm tra sớm tài liệu/thiết kế/mã nguồn không cần chạy app; Dynamic Testing thực thi phần mềm để kiểm chứng hành vi chức năng & phi chức năng (Nguồn ảnh: Tổng hợp giáo trình Software Testing).*
+
 ---
 
 ## 2. Chi tiết về Static Testing (Kiểm thử tĩnh)
 
 Một hiểu lầm phổ biến là *"Static testing chỉ là ngồi đọc code"*. Thực tế, **mọi work product viết ra trên văn bản hoặc mã nguồn** đều có thể kiểm thử tĩnh. Static Testing gồm 2 trụ cột:
 
-```mermaid
-flowchart TD
-    ST["STATIC TESTING (Không chạy chương trình)"]
-    ST --> MR["1. Manual Reviews (Con người)"]
-    ST --> ASA["2. Automated Static Analysis (Công cụ)"]
+![Cây phân loại kỹ thuật Static Testing: Manual Reviews và Static Analysis](./images/static-testing-overview.webp)
 
-    MR --> MR1["Informal Review (Đánh giá nhanh)"]
-    MR --> MR2["Walkthrough (Tác giả dẫn dắt)"]
-    MR --> MR3["Technical Review (Chuyên gia kỹ thuật)"]
-    MR --> MR4["Formal Inspection (Fagan / IEEE 1028)"]
-
-    ASA --> ASA1["Linters: Ruff (Python), ESLint (JS)"]
-    ASA --> ASA2["Static Analyzers: SpotBugs, SonarQube (Java)"]
-    ASA --> ASA3["Security Scanners: Snyk, Checkmarx"]
-```
+*Hình: Hai nhánh chính của Static Testing — Reviews (Informal, Walkthrough, Peer Review, Inspection) và Static Analysis (Data Flow, Control Flow, Cyclomatic Complexity). Nguồn ảnh: GeeksforGeeks.*
 
 ### Trụ cột 1: 4 mức độ Review thủ công (từ nhẹ đến khắt khe)
 

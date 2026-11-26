@@ -34,6 +34,11 @@ Khi tài liệu yêu cầu bị thiếu, lỗi thời, không đủ thời gian 
 ### 1. Định nghĩa & Phân biệt với Ad-hoc Testing
 
 - **Định nghĩa (ISTQB v4.0):** Exploratory Testing là phương pháp trong đó **học hỏi về hệ thống (learning), thiết kế test (test design) và thực thi test (test execution)** diễn ra **đồng thời** và tương tác liên tục trong một khoảng thời gian có giới hạn.
+
+![Vòng lặp Kiểm thử Thăm dò (Exploratory Testing Cycle)](./images/exploratory-testing.webp)
+
+*Hình: Chu trình liên tục `Learning → Test Design & Execution → Observation & Analysis → Defect Reporting → Learning & Improvement` (Nguồn ảnh: GeeksforGeeks).*
+
 - **Đừng nhầm với Ad-hoc Testing!**
 
 | Tiêu chí | Ad-hoc Testing *(Test ngẫu hứng)* | Exploratory Testing *(Kiểm thử thăm dò)* |

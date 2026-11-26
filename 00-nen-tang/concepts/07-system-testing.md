@@ -16,6 +16,10 @@
 
 ## 2. "Hệ thống tích hợp hoàn chỉnh" nghĩa là gì?
 
+![Vị trí System Testing sau Unit Testing và Integration Testing, trước Acceptance Testing](../images/system-testing.webp)
+
+*Hình: System Testing kiểm thử toàn bộ hệ thống đã tích hợp trước khi bước vào pha Acceptance Testing (Nguồn ảnh: GeeksforGeeks).*
+
 Khác với Unit Test và Integration Test (có thể dùng *Mock/Stub* cho phần phụ thuộc ngoài), ở **System Testing không còn giả lập nội bộ cốt lõi nữa**:
 - **Frontend (Web / Mobile App)** nối thật với **Backend API**.
 - **Backend** nối thật với **Database**.

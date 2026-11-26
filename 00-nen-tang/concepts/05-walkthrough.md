@@ -13,6 +13,10 @@ Theo chuẩn **IEEE 1028** (*Standard for Software Reviews and Audits*) và **IS
 - **Điểm nhận diện lớn nhất:** **Tác giả là người khởi xướng và dẫn dắt buổi họp** (ngược với *Formal Inspection*, vốn bắt buộc một *Moderator độc lập* chủ trì).
 - **Hoàn toàn tĩnh (Static):** Thực hiện qua phân tích logic và phản biện kịch bản trước khi gõ hoặc chạy code.
 
+![Vị trí Walkthrough trên thang đo mức độ trang trọng của Static Review](../images/walkthrough.png)
+
+*Hình: Walkthrough có tính cấu trúc cao hơn Informal Review nhưng vẫn linh hoạt hơn Technical Review và Formal Inspection (Nguồn ảnh: GeeksforGeeks).*
+
 ---
 
 ## 2. Bốn mục tiêu cốt lõi

@@ -16,6 +16,10 @@
 
 > **Lưu ý:** Không chỉ input mới có EP! Bạn có thể chia phân vùng cho **Output** (ví dụ: mức thuế `0%`, `10%`, `20%` hoặc loại vé `VIP`, `Standard`, `Free`), rồi truy ngược xem input nào tạo ra từng output partition đó.
 
+![Minh họa nguyên lý Equivalence Partitioning: chia tập dữ liệu thành phân vùng hợp lệ và không hợp lệ](./images/equivalence-partitioning.webp)
+
+*Hình: Chia không gian đầu vào thành các lớp tương đương Valid / Invalid và chỉ cần chọn giá trị đại diện cho mỗi phân vùng (Nguồn ảnh: GeeksforGeeks).*
+
 ---
 
 ## 2. Phân loại & Quy tắc chia phân vùng chuẩn

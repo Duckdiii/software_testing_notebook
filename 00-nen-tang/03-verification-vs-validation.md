@@ -11,17 +11,9 @@
 | **Verification** *(Xác minh)* | **"Are we building the product right?"**<br>*(Chúng ta có đang xây dựng sản phẩm đúng cách không?)* | Kiểm tra sản phẩm/tài liệu của một giai đoạn có **tuân thủ đúng đặc tả kỹ thuật (SRS), thiết kế, quy chuẩn** đã viết ra hay không. |
 | **Validation** *(Xác thực)* | **"Are we building the right product?"**<br>*(Chúng ta có đang xây dựng đúng sản phẩm khách hàng cần không?)* | Kiểm tra sản phẩm thực tế có **đáp ứng đúng nhu cầu nghiệp vụ, mục đích sử dụng (*Fit for purpose*) và kỳ vọng thực tế** của người dùng cuối/stakeholders hay không. |
 
-```mermaid
-flowchart TB
-    Need["Nhu cầu thực tế của Stakeholder / User"]
-    Spec["Tài liệu Đặc tả & Thiết kế (SRS / Design)"]
-    Code["Mã nguồn & Sản phẩm thực thi (Software)"]
+![So sánh Verification và Validation trong phát triển phần mềm](./images/verification-vs-validation.webp)
 
-    Need -->|"Phân tích & Đặc tả"| Spec
-    Spec -->|"Lập trình & Triển khai"| Code
-    Code -. "VERIFICATION: Building the product right?" .-> Spec
-    Code -. "VALIDATION: Building the right product?" .-> Need
-```
+*Hình: Verification ("Building the product right") kiểm tra tài liệu/thiết kế/code nội bộ; Validation ("Building the right product") kiểm chứng sản phẩm chạy thật theo kỳ vọng người dùng (Nguồn ảnh: GeeksforGeeks).*
 
 ### Định nghĩa chuẩn quốc tế & Học thuật
 - **Theo IEEE / ISO/IEC/IEEE 29119:**
@@ -49,25 +41,9 @@ flowchart TB
 
 Trong mô hình chữ V, nhánh đi xuống (thiết kế phân rã) được **Verify** liên tục bằng Review/Inspection, còn nhánh đi lên là các cấp độ kiểm thử gắn kết chặt chẽ giữa Verification và Validation:
 
-```mermaid
-flowchart LR
-    subgraph Left["Nhánh phân tích & thiết kế"]
-        R["Requirements Analysis"] --> A["System Architecture"] --> M["Module Design"] --> C["Coding"]
-    end
+![Mô hình chữ V (V-Model) trong kiểm thử phần mềm](./images/v-model-vv.png)
 
-    subgraph Right["Nhánh kiểm thử (V&V)"]
-        UT["Unit Testing & Linters (Verification)"]
-        IT["Integration Testing (Verification)"]
-        ST["System Testing (Verification & Validation)"]
-        UAT["Acceptance Testing / UAT (Validation)"]
-        UT --> IT --> ST --> UAT
-    end
-
-    C --- UT
-    M --- IT
-    A --- ST
-    R --- UAT
-```
+*Hình: Mô hình chữ V cổ điển thể hiện tính đối xứng giữa nhánh thiết kế (trái) và nhánh kiểm thử (phải). Nguồn: [Wikimedia Commons (CC BY-SA)](https://commons.wikimedia.org/wiki/File:V-model.png). Lưu ý: Một số sơ đồ SWE 3 tầng dừng ở `System Testing`; trong ISTQB và bài giảng trường có thêm tầng thứ 4 trên cùng là `Acceptance Testing (UAT)` — xem sơ đồ 4+ tầng V&V và Shift-Left chi tiết tại [concepts/02-v-model-and-vv.md](./concepts/02-v-model-and-vv.md).*
 
 ---
 

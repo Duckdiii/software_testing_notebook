@@ -50,20 +50,9 @@ Một Bug Report tốt không chỉ giúp Developer tái lập và sửa lỗi t
 
 ## 3. Vòng đời của một Bug (Defect Lifecycle)
 
-```mermaid
-stateDiagram-v2
-    [*] --> New: Tester log bug
-    New --> Rejected: Không phải lỗi / Duplicate / As designed
-    New --> Deferred: Hoãn sang release sau
-    New --> Assigned: Lead/PO duyệt & giao Dev
-    Assigned --> InProgress: Dev đang xử lý
-    InProgress --> Fixed: Dev sửa xong & deploy lên Test Env
-    Fixed --> Retest: Tester chạy Confirmation Testing
-    Retest --> Closed: Pass (lỗi đã hết)
-    Retest --> Reopened: Fail (vẫn còn lỗi)
-    Reopened --> InProgress: Dev sửa lại
-    Closed --> [*]
-```
+![Vòng đời chuẩn của Defect / Bug Lifecycle](./images/bug-life-cycle-gfg.png)
+
+*Hình: Vòng đời xử lý Defect tiêu chuẩn từ `New → Assigned → Open → Fixed → Pending Retest → Retest → Verified → Closed` (cùng các nhánh `Rejected / Duplicate / Deferred / Not a Bug` và quay lại `Reopened` nếu Confirmation Testing thất bại). Nguồn ảnh: GeeksforGeeks.*
 
 ---
 

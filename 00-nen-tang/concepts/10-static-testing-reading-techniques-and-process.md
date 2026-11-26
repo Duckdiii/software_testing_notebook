@@ -13,6 +13,10 @@ Ngoài các mục đã nêu ở [04-static-vs-dynamic-testing.md](../04-static-v
   2. **Improve Testability (*Tăng khả năng kiểm thử*):** Làm rõ ràng câu chữ, con số biên và cấu trúc module để sau này Tester/Dev dễ viết Test Case và Unit Test.
 - **Nhóm Work Products thứ 5:** **Tài liệu người dùng (*User documentation*)** gồm *User Manuals*, *Hướng dẫn cài đặt*, và *Release Notes* — cũng là đối tượng review tĩnh (kiểm tra bước hướng dẫn có mâu thuẫn tính năng thật hay thiếu cảnh báo rủi ro không). Ngoài ra ở nhóm Mã nguồn & Cấu hình còn gồm `.ts`, script `.sql`, `Dockerfile` và **Kubernetes YAML**.
 
+![Phân loại tổng quan các nhánh Static Testing](../images/static-testing-overview.webp)
+
+*Hình: Tổng quan hai nhánh Reviews (Informal, Walkthrough, Peer Review, Inspection) và Static Analysis (Nguồn ảnh: GeeksforGeeks).*
+
 ---
 
 ## 2. Bốn Kỹ thuật Đọc khi Review Tài liệu (*Review Approaches / Reading Techniques*)
@@ -46,6 +50,10 @@ Trong **ISTQB CTFL v4.0.1 Section 3.2.4**, ngoài việc phân *loại cuộc h�
 ---
 
 ## 4. Giải thích Điểm khác biệt: Quy trình Review 5 bước vs. 6 bước
+
+![Minh họa quy trình Inspection 6 giai đoạn gồm Rework và Follow-up](../images/fagan-inspection-flow.png)
+
+*Hình: Quy trình 6 bước chuẩn IEEE 1028 / Fagan có bước Rework & Follow-up tách riêng (Nguồn: Wikimedia Commons).*
 
 > [!NOTE]
 > **Tại sao [04-static-vs-dynamic-testing.md](../04-static-vs-dynamic-testing.md) ghi quy trình Review gồm 5 bước, còn PDF `Static testing overview` (tr.6) lại vẽ 6 bước?**

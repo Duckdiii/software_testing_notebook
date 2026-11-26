@@ -65,6 +65,11 @@ Cùng là hoạt động kiểm tra sản phẩm dạng tĩnh (chưa chạy ph�
 ## 4. Ba hình thức Static Validation phổ biến trong thực tế
 
 1. **Paper Prototyping / Wireframe thô:** Vẽ phác thảo trên giấy hoặc bảng trắng các màn hình và mũi tên chuyển luồng để chốt nhanh bố cục với khách hàng.
+
+![Ví dụ bản thiết kế Wireframe giao diện trước khi viết code](../images/wireframe-prototype-loop.png)
+
+*Hình: Minh họa một bản Wireframe giao diện di động được dựng sẵn để khách hàng xem bố cục nút bấm và phản hồi trước khi lập trình (Nguồn ảnh: Visual Paradigm).*
+
 2. **Clickable Interactive Prototype (Figma / Adobe XD):** Phổ biến nhất hiện nay; đầy đủ màu sắc, font chữ, luồng chuyển trang bấm thử trực tiếp trên điện thoại hoặc trình duyệt web.
 3. **Storyboarding / User Journey Mapping:** Kể câu chuyện theo từng khung cảnh thực tế (*"8h sáng nhân viên mở app, khách mang hàng tới đổi trả..."*) để khách hàng phản biện ngay: *"Ngoài tiệm tôi không làm theo thứ tự đó!"*
 

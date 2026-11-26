@@ -69,9 +69,6 @@ flowchart TD
 
 ## 6. Vị trí trong thang đo Review (Tăng dần độ hình thức)
 
-```mermaid
-flowchart LR
-    R1["1. Informal Review - Peer check nhanh hàng ngày, 0 thủ tục"] --> R2["2. Walkthrough - Tác giả dẫn dắt, chạy thử kịch bản tìm lỗ hổng logic"]
-    R2 --> R3["3. Technical Review - Chuyên gia họp đánh giá kiến trúc, scale, bảo mật"]
-    R3 --> R4["4. Formal Inspection - Quy trình Fagan chặt chẽ, checklist & metrics định lượng"]
-```
+![Thang đo mức độ trang trọng từ Walkthrough đến Technical Review và Inspection](../images/walkthrough.png)
+
+*Hình: Mức độ trang trọng tăng dần từ `Informal Review` (nhẹ nhất, hàng ngày) → `Walkthrough` → `Technical Review` → `Formal Inspection` (chặt chẽ nhất). Nguồn ảnh: GeeksforGeeks.*

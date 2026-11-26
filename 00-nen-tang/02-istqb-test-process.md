@@ -8,27 +8,11 @@ Kiểm thử không chỉ là *"chạy app và bấm nút"*. Theo chuẩn **ISTQ
 
 ## Sơ đồ tổng quan 7 hoạt động (ISTQB CTFL v4.0)
 
-```mermaid
-flowchart TD
-    TP["1. Test Planning (Lập kế hoạch)"]
-    TMC["2. Test Monitoring & Control (Giám sát & Kiểm soát)"]
-    TA["3. Test Analysis (Phân tích: Test cái gì?)"]
-    TD["4. Test Design (Thiết kế: Test như thế nào?)"]
-    TI["5. Test Implementation (Hiện thực hóa / Chuẩn bị)"]
-    TE["6. Test Execution (Thực thi & Báo lỗi)"]
-    TC["7. Test Completion (Hoàn thành & Tổng kết)"]
+![Quy trình Kiểm thử Phần mềm (STLC / Test Process)](./images/istqb-stlc-process.png)
 
-    TP --> TA --> TD --> TI --> TE --> TC
-    TMC -. "Giám sát & điều chỉnh xuyên suốt" .-> TP
-    TMC -.-> TA
-    TMC -.-> TD
-    TMC -.-> TI
-    TMC -.-> TE
-    TMC -.-> TC
-    TE -. "Phát hiện tình huống mới / cập nhật" .-> TA
-```
+*Minh họa 6 pha cơ bản của STLC (Nguồn ảnh: GeeksforGeeks). Lưu ý đối chiếu với chuẩn **ISTQB CTFL v4.0** bên dưới:*
 
-> **Lưu ý về tên gọi:** Trong roadmap có thể viết gọn 6 bước tuần tự (`planning → analysis → design → implementation → execution → completion`), còn trong chuẩn ISTQB đầy đủ có thêm **Test Monitoring & Control** chạy song song xuyên suốt để theo dõi tiến độ và điều chỉnh kịp thời.
+> **Lưu ý về tên gọi:** STLC truyền thống chia 6 bước tuần tự (`Requirement Analysis → Test Planning → Test Case Development → Test Environment Setup → Test Execution → Test Closure`), còn chuẩn **ISTQB CTFL v4.0** định nghĩa **7 hoạt động cốt lõi** (`Test Planning`, `Test Monitoring & Control`, `Test Analysis`, `Test Design`, `Test Implementation`, `Test Execution`, `Test Completion`) — trong đó **Test Monitoring & Control** chạy song song xuyên suốt mọi pha để theo dõi số liệu và điều chỉnh kịp thời.
 
 ---
 

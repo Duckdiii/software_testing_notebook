@@ -30,6 +30,10 @@
 
 ## 3. Alpha Testing (Thử nghiệm nội bộ — Môi trường có kiểm soát)
 
+![Quy trình triển khai Alpha Testing nội bộ](../images/alpha-testing-process.webp)
+
+*Hình: Các bước thực hiện Alpha Testing trong môi trường kiểm soát nội bộ trước khi mở ra bên ngoài (Nguồn ảnh: GeeksforGeeks).*
+
 - **Nơi diễn ra:** Tại chính công ty phát triển phần mềm (*Developer's site*).
 - **Ai thử nghiệm?**
   - Nhân viên nội bộ nhưng **không trực tiếp code/test tính năng đó** (CSKH, Sales, Marketing, Tester từ dự án khác).
@@ -55,6 +59,10 @@ Sau khi bản Alpha tương đối ổn định, sản phẩm bước vào **Bet
 ### Hai hình thức phát hành Beta phổ biến
 1. **Closed Beta (*Private Beta*):** Giới hạn người tham gia theo lời mời/đăng ký (VD: `1.000` người dùng qua **Apple TestFlight** hoặc file `.apk` riêng).
 2. **Open Beta (*Public Beta*):** Mở công khai cho bất kỳ ai tải về trải nghiệm (phổ biến với Game online, Windows/iOS Public Beta).
+
+![Các hình thức Beta Testing phổ biến trong thực tế](../images/beta-testing-types.webp)
+
+*Hình: Phân loại các hình thức Beta Testing (Traditional, Public, Technical, Focused, Post-release) khi thử nghiệm với người dùng thật (Nguồn ảnh: GeeksforGeeks).*
 
 ### Mục đích chính của Beta Testing
 1. Tìm **Edge-case bugs** gắn với phần cứng, hệ điều hành hoặc mạng thực tế mà lab không tái lập được.

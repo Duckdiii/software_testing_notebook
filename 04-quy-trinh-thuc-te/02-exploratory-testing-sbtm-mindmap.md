@@ -18,6 +18,10 @@ Một hiểu lầm phổ biến là coi **Exploratory Testing (ET)** bằng vớ
 
 ## 2. Cấu trúc của Session-Based Test Management (SBTM)
 
+![Vòng lặp Kiểm thử Thăm dò (Exploratory Testing Cycle)](../01-test-design/images/exploratory-testing.webp)
+
+*Hình: Bản chất vòng lặp đồng thời giữa Learning → Test Design & Execution → Observation & Analysis → Defect Reporting (Nguồn ảnh: GeeksforGeeks).*
+
 ```mermaid
 flowchart LR
     P["1. Charter Planning<br/>Xác định sứ mệnh & rủi ro<br/>(60–90 phút / session)"] --> E["2. Uninterrupted Session<br/>Khám phá, ghi Mind Map,<br/>tìm bug & đặt câu hỏi"]

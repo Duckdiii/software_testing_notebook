@@ -52,12 +52,9 @@ Trong Scrum chuẩn, không có khái niệm "Sprint code trước, Sprint sau m
 
 Trong Chương 18 *Agile Testing* (tr. 411) gọi thực hành này là **"Power of Three"**: trước khi Dev bắt tay code một User Story phức tạp, **3 góc nhìn** ngồi lại với nhau khoảng **15–20 phút**:
 
-```mermaid
-flowchart LR
-    PO["1. Business (PO / BA)<br/>'Vấn đề nghiệp vụ là gì?<br/>Khách hàng mong đợi gì?'"] --- TA(("Three Amigos<br/>15–20 phút"))
-    DEV["2. Development (Dev)<br/>'Xây dựng như thế nào?<br/>Ảnh hưởng DB / API / Performance ra sao?'"] --- TA
-    QA["3. Testing (QA / SDET)<br/>'Điều gì có thể hỏng?<br/>Biên, ngoại lệ, bảo mật, concurrency?'"] --- TA
-```
+![Mô hình Three Amigos: Developer, Tester và Business Analyst/PO cộng tác chốt Acceptance Criteria](./images/three-amigos.png)
+
+*Hình: Buổi Three Amigos kết hợp góc nhìn Business (PO/BA) – Development (Dev) – Testing (QA) để thống nhất hiểu biết chung và bộ Acceptance Criteria kiểm thử được (Nguồn ảnh: Visual Paradigm).*
 
 ### Đầu ra bắt buộc của một buổi Three Amigos
 1. Bộ **Acceptance Criteria (AC)** rõ ràng, kiểm thử được (*testable*), không mập mờ.

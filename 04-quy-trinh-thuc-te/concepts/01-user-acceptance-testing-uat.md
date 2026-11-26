@@ -8,13 +8,9 @@
 
 Nếu Unit, Integration và System Testing là bài kiểm tra do đội kỹ thuật nội bộ tự chấm, thì **UAT** là **"vạch đích cuối cùng"** — khoảnh khắc khách hàng thật bước vào kiểm chứng để quyết định: **"Có ký biên bản nghiệm thu, trả tiền và đưa vào vận hành hay không?"**.
 
-```mermaid
-flowchart LR
-    Req["Requirements Analysis (Nhánh trái)"] <-->|"Validation & Sign-off"| UAT["Acceptance Testing / UAT (Đỉnh nhánh phải)"]
-    UAT --> Decision{"Nghiệm thu Go-Live?"}
-    Decision -->|"PASS"| Sign["Ký UAT Sign-off & Giải ngân"]
-    Decision -->|"FAIL"| Fix["Xử lý Bug sai hợp đồng / Change Request"]
-```
+![Vị trí Acceptance Testing / UAT ở nhánh phải trên cùng của V-Model & Shift-Left](../../00-nen-tang/images/shift-left-model.jpg)
+
+*Hình: Trên mô hình chữ V, Acceptance Testing đối xứng trực tiếp với User Requirements và thuộc tầng **Validation** phía trên đường đứt nét (Nguồn: Wikimedia Commons).*
 
 **UAT là quá trình Validation** do Khách hàng (*Client*), Product Owner (*PO*) hoặc đại diện Người dùng cuối trực tiếp thực thi trên môi trường gần giống thật nhất để trả lời 2 câu hỏi:
 1. *"Phần mềm này có giải quyết đúng và đủ bài toán kinh doanh của tôi không?"*
@@ -22,6 +18,10 @@ flowchart LR
 
 - **Không soi lỗi kỹ thuật vặt:** UAT không đi tìm lỗi cú pháp hay logic cơ bản (QA phải lọc sạch từ System Testing). Trọng tâm của UAT là **Tính phù hợp nghiệp vụ (*Business Suitability*)** và **Trải nghiệm người dùng (*UX*)**.
 - **Ý nghĩa thương mại & pháp lý:** Gắn với **Biên bản nghiệm thu (*UAT Sign-off Document*)** để giải ngân hợp đồng và cho phép **Go-Live**.
+
+![Quy trình 7 bước thực hiện User Acceptance Testing (UAT)](../images/uat-steps.png)
+
+*Hình: Quy trình triển khai UAT chuẩn từ phân tích yêu cầu, lập kế hoạch, thiết kế kịch bản/dữ liệu thực tế đến chạy nghiệm thu và xác nhận mục tiêu kinh doanh (Nguồn ảnh: GeeksforGeeks).*
 
 ---
 

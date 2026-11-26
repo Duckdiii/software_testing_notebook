@@ -14,17 +14,13 @@ Gayathri Mohan phân loại kiểm thử chức năng tự động thành **6 t�
 3. **Isolation / Dependencies (Độ cô lập & phụ thuộc hạ tầng)**
 4. **Cost & Fragility (Chi phí viết, bảo trì & độ mong manh)**
 
-```mermaid
-flowchart BT
-    subgraph PYRAMID["TEST AUTOMATION PYRAMID (Chuẩn mục tiêu)"]
-        direction TB
-        M["☁️ Manual Exploratory Testing & UAT (Đỉnh mây — Tư duy con người)"]
-        UI["UI / E2E Tests (Ít nhất — Chậm, Đắt, Dễ vỡ — 'Straw')"]
-        SVC["Integration, Contract & Service/API Tests (Vừa phải — 'Sticks')"]
-        UT["Unit & Component Tests (Nhiều nhất — Nhanh, Rẻ, Vững chắc — 'Bricks')"]
-        UT --- SVC --- UI --- M
-    end
-```
+![The Practical Test Pyramid: Unit, Service và UI Tests](./images/test-pyramid-fowler.png)
+
+*Hình: Practical Test Pyramid của Ham Vocke / Martin Fowler — càng xuống đáy test càng nhanh và cô lập cao; càng lên đỉnh test càng tích hợp rộng và chậm hơn (Nguồn: `martinfowler.com`).*
+
+![Ideal Software Testing Pyramid kèm lớp Manual Exploratory Testing trên đỉnh](./images/test-pyramid-watirmelon.jpg)
+
+*Hình: Mô hình kim tự tháp mở rộng với đỉnh là Manual Exploratory Testing bằng góc nhìn con người (`alisterscott.github.io` / WatirMelon).*
 
 ### So sánh chi tiết 6 tầng kiểm thử trên kiến trúc TechStore
 

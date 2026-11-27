@@ -51,17 +51,72 @@
 
 ## 3. EP cho nhiều tham số: Each Choice vs. All Combinations
 
-Khi hệ thống có nhiều ô nhập liệu (ví dụ `k` trường), có 2 chiến lược kết hợp các phân vùng theo ISTQB v4.0:
+Trong bài tập đơn giản thường chỉ có 1 ô nhập liệu (như `Credits`), nhưng phần mềm thực tế luôn có nhiều ô nhập cùng lúc trên một màn hình (*Form Đăng ký, Tìm kiếm, Đặt hàng...*). Sau khi đã chia phân vùng cho **từng tham số riêng lẻ**, ta cần chọn chiến lược **ghép các phân vùng đó thành từng dòng Test Case**.
 
-### 1. Each Choice Coverage (Phủ từng lựa chọn — Phổ biến nhất)
-- Mỗi phân vùng (hợp lệ và không hợp lệ) của **từng** tham số xuất hiện ít nhất 1 lần trong bộ test.
-- **Quy tắc quan trọng khi ghép ca Invalid:** Mỗi test case chỉ nên chứa **tối đa 1 giá trị Invalid** (còn các tham số khác giữ nguyên ở **Valid**).
-  - *Tại sao?* Nếu cùng 1 lúc nhập `Email sai` + `Mật khẩu ngắn` + `Tuổi âm`, khi hệ thống báo lỗi, lỗi này sẽ **che khuất (defect masking)** các kiểm tra của trường còn lại — bạn không biết hàm validate của các trường kia có chạy hay không!
-- **Số test case tối thiểu:** Bằng số phân vùng lớn nhất của 1 tham số (nếu ghép hợp lệ chung) hoặc `1 (all valid) + tổng số invalid partitions` (nếu cô lập từng ca invalid).
+Theo chuẩn **ISTQB CTFL v4.0**, có 2 chiến lược cơ bản (từ tiết kiệm đến vét cạn). Để dễ hình dung, hãy xét **cùng một Form Đăng ký thành viên** gồm **2 tham số** (tổng `6` phân vùng = `4 Valid + 2 Invalid`):
+- **Tham số `age` (Tuổi):** `V_Age1` (`18–30`), `V_Age2` (`31–60`), `INV_Age` (`< 18` — *Invalid*)
+- **Tham số `plan` (Gói):** `V_Plan1` (`"Free"`), `V_Plan2` (`"VIP"`), `INV_Plan` (`""` rỗng — *Invalid*)
 
-### 2. All Combinations (Tất cả tổ hợp — Đầy đủ nhưng tốn kém)
-- Kết hợp mọi phân vùng của tham số 1 với mọi phân vùng của tham số 2...
-- Nếu có 3 tham số, mỗi tham số có 4 phân vùng → `4 × 4 × 4 = 64` ca. Chỉ nên dùng khi ít tham số và logic phụ thuộc chéo nhau mạnh (hoặc chuyển sang dùng **Decision Table** / **Pairwise**).
+---
+
+### 1. Each Choice Coverage *(Phủ từng lựa chọn — Phổ biến nhất)*
+
+- **Tư duy cốt lõi:** *"Mỗi phân vùng của từng tham số chỉ cần xuất hiện **ít nhất 1 lần** trong bộ test — không cần ghép mọi cặp với nhau."* Giống như thử quần áo: bạn chỉ cần mặc sao cho **chiếc áo nào và chiếc quần nào cũng được thử ít nhất 1 lần** (`Áo1 + Quần1`, `Áo2 + Quần2`), không nhất thiết phải mặc đủ mọi bộ đôi (`2 × 2 = 4` bộ).
+- **Cạm bẫy Defect Masking (*Che khuất lỗi*) khi ghép Invalid:**
+  - Nếu ghép ngây thơ để chỉ tốn đúng $\max(3, 3) = 3$ ca, dòng thứ 3 sẽ bị gộp thành **`(age = 15 [Invalid], plan = "" [Invalid])`**.
+  - Khi chạy ca này, code thường kiểm tra từ trên xuống: thấy `age = 15 < 18`, hệ thống lập tức trả lỗi *"Chưa đủ 18 tuổi"* rồi **dừng luôn**. Hàm validate của `plan` phía dưới không hề được thực thi (hoặc lỗi của `plan` bị che mất). Nếu dev quên validate `plan`, bạn sẽ **không bao giờ phát hiện ra**!
+- **Quy tắc thực hành chuẩn (*Each Choice an toàn — Cô lập Invalid*):**
+  1. **Với các phân vùng Valid:** Ghép song song các giá trị Valid của nhiều trường vào chung một test case → chỉ tốn **$\max(V_1, V_2, \dots, V_k)$ ca** (với `V_i` là số phân vùng Valid của từng tham số).
+  2. **Với các phân vùng Invalid:** Mỗi test case **chỉ chứa ĐÚNG 1 giá trị Invalid**, các tham số còn lại giữ giá trị **Valid** chuẩn → tốn thêm **$\sum INV_i$ ca**.
+
+**Ví dụ áp dụng cho Form Đăng ký (Chỉ tốn `2 + 2 = 4` Test Cases):**
+
+| Test ID | `age` | `plan` | Phân vùng được phủ | Kỳ vọng (*Expected*) |
+| :---: | :--- | :--- | :--- | :--- |
+| `TC_1` | `25` (`V_Age1`) | `"Free"` (`V_Plan1`) | `V_Age1`, `V_Plan1` | Tạo tài khoản thành công |
+| `TC_2` | `40` (`V_Age2`) | `"VIP"` (`V_Plan2`) | `V_Age2`, `V_Plan2` | Tạo tài khoản thành công |
+| `TC_3` | `15` (`INV_Age`) | `"Free"` (`V_Plan1`) | `INV_Age` *(cô lập)* | Báo lỗi tuổi `< 18` |
+| `TC_4` | `25` (`V_Age1`) | `""` (`INV_Plan`) | `INV_Plan` *(cô lập)* | Báo lỗi chưa chọn gói |
+
+→ **Chỉ với `4` Test Cases**, toàn bộ **`6/6` phân vùng (100% EP Coverage)** đều được kiểm tra rõ ràng và không che khuất lỗi của nhau!
+
+> **Giải thích công thức đếm số test case tối thiểu:**
+> - **Each Choice thuần túy** *(lý thuyết tối thiểu, chấp nhận rủi ro ghép chung Invalid)*: $\max(\text{tổng phân vùng của từng tham số})$ — ở ví dụ trên là $\max(3, 3) = 3$ ca.
+> - **Each Choice an toàn** *(khuyến nghị thực tế — cô lập Invalid)*: **$\max(V_i) + \sum INV_i$** — ở ví dụ trên là $\max(2, 2) + (1 + 1) = 4$ ca. *(Trường hợp đặc biệt mỗi trường chỉ có đúng `1` phân vùng Valid — ví dụ validate định dạng Tên, Email, SĐT — thì $\max(V_i) = 1$, công thức rút gọn thành **`1 (All Valid) + Tổng số Invalid`**).*
+
+---
+
+### 2. All Combinations *(Tất cả tổ hợp — Đầy đủ nhất nhưng tốn kém nhất)*
+
+- **Tư duy cốt lõi:** Nhân chéo **TỪNG** phân vùng của tham số 1 với **TỪNG** phân vùng của tham số 2 (tích Đề-các) để kiểm tra mọi cặp kết hợp có thể xảy ra.
+- **Áp dụng cho chính Form Đăng ký trên (`3 × 3 = 9` Test Cases):**
+
+| STT | `age` | `plan` | Đánh giá tổ hợp |
+| :---: | :--- | :--- | :--- |
+| `1` | `25` (`V_Age1`) | `"Free"` (`V_Plan1`) | Hợp lệ |
+| `2` | `25` (`V_Age1`) | `"VIP"` (`V_Plan2`) | Hợp lệ *(Each Choice đã bỏ qua cặp `18–30 + VIP` này)* |
+| `3` | `25` (`V_Age1`) | `""` (`INV_Plan`) | Cô lập `INV_Plan` |
+| `4` | `40` (`V_Age2`) | `"Free"` (`V_Plan1`) | Hợp lệ *(Each Choice đã bỏ qua cặp `31–60 + Free` này)* |
+| `5` | `40` (`V_Age2`) | `"VIP"` (`V_Plan2`) | Hợp lệ |
+| `6` | `40` (`V_Age2`) | `""` (`INV_Plan`) | Lặp lại kiểm tra `INV_Plan` |
+| `7` | `15` (`INV_Age`) | `"Free"` (`V_Plan1`) | Cô lập `INV_Age` |
+| `8` | `15` (`INV_Age`) | `"VIP"` (`V_Plan2`) | Lặp lại kiểm tra `INV_Age` |
+| `9` | `15` (`INV_Age`) | `""` (`INV_Plan`) | **Vô ích / Defect Masking:** 2 lỗi gộp chung |
+
+- **Vấn đề bùng nổ tổ hợp (*Combinatorial Explosion*):**
+  - Với 2 tham số × 3 phân vùng: tăng từ `4` ca → `9` ca (và sinh ca thừa như dòng 6, 8, 9).
+  - Với **3 tham số × 4 phân vùng**: số ca phình lên **$4 \times 4 \times 4 = \mathbf{64}$ ca**.
+  - Với **5 tham số × 4 phân vùng**: **$4^5 = \mathbf{1.024}$ ca** — bất khả thi để bảo trì!
+
+### 3. Bảng so sánh & Cách kết hợp khôn ngoan ngoài thực tế
+
+| Chiến lược | Mức độ bao phủ | Số Test Case | Rủi ro bỏ sót tương tác | Khi nào nên dùng? |
+| :--- | :--- | :--- | :--- | :--- |
+| **Each Choice** *(Cô lập Invalid)* | Mọi phân vùng xuất hiện $\ge 1$ lần | **Ít nhất** ($\max(V_i) + \sum INV_i$) | **Cao** nếu các tham số phụ thuộc chéo (VD: `Age 18–30 + VIP` giảm giá khác `31–60 + VIP`) | Các trường **độc lập nhau** (tên, email, mật khẩu, địa chỉ) hoặc khi cần bộ Smoke test nhanh. |
+| **[Pairwise Testing](./06-pairwise-testing.md)** *(Trung gian)* | Mọi **cặp 2 tham số** hợp lệ xuất hiện đủ | **Trung bình** (giảm 70–90% so với All Combinations) | **Thấp** (bắt 70–95% bug tương tác theo NIST) | Form/cấu hình có 3–6 tham số trở lên (*Trình duyệt + OS + Thanh toán + Voucher*). |
+| **All Combinations** | Toàn bộ $N_1 \times N_2 \times \dots \times N_k$ | **Cực lớn** (tăng theo cấp số nhân) | **Gần như bằng 0** | Rất ít tham số (2–3 trường) có **nghiệp vụ ràng buộc chặt với nhau** (khi đó thường kết hợp với [Decision Table](./03-decision-table-testing.md)). |
+
+> **Mẹo thực chiến Senior QA:** Không bao giờ chạy `All Combinations` trên các giá trị **Invalid**! Nếu hai tham số có logic tính toán phụ thuộc chéo ở trạng thái hợp lệ (như bảng chiết khấu `total × tier` ở Mục 5 bên dưới), chỉ cần **nhân chéo riêng các phân vùng Valid** ($3 \times 3 = 9$ ca) **cộng thêm** các ca Invalid cô lập ($3$ ca) = `12 ca`, thay vì nhân mù quáng cả Invalid thành `5 × 4 = 20 ca`.
 
 ---
 
@@ -105,7 +160,8 @@ $$\text{EP Coverage (\%)} = \left( \frac{\text{Số phân vùng đã được te
 | `TC_EP_05` | `"abc"` | `Standard` | `EP_T_INV2` | Báo lỗi: Định dạng số không hợp lệ (`400`) |
 | `TC_EP_06` | `1.000.000` | `"Diamond"` | `EP_M_INV1` | Báo lỗi: Hạng thành viên không tồn tại (`400`) |
 
-→ Chỉ với **6 Test Cases**, ta đã đạt **100% EP Coverage** (`9/9` phân vùng)!
+→ Chỉ với **6 Test Cases** ($\max(3, 3) + (2 + 1) = 6$ theo chiến lược **Each Choice an toàn** ở Mục 3), ta đã đạt **100% EP Coverage** (`9/9` phân vùng)!  
+*(So sánh nhanh: nếu dùng **All Combinations** nhân chéo toàn bộ sẽ phình thành $5 \times 4 = \mathbf{20}$ ca; còn nếu cần kiểm kỹ ma trận chiết khấu giữa 3 mức tiền và 3 hạng thành viên thì chỉ cần nhân chéo phần Valid `3 × 3 = 9` ca + `3` ca Invalid cô lập = **`12` ca**).*
 
 ---
 
